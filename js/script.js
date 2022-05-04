@@ -15,31 +15,19 @@ if (navigator.serviceWorker) {
   });
 }
 
-const randomNumber = Math.floor(Math.random() * 6) + 1;
-
-/**
- * This function updates the slider value.
- */
-function updateSliderValue(valueFromSlider) {
-  document.getElementById("slider-value").innerHTML = valueFromSlider;
-}
-
 /**
  * This function compares slider with random number.
  */
 function guessClicked() {
-  const sliderValue = slider.value;
+  var date = document.getElementById("date")
+  var userAge = parseInt(document.getElementById("user-age").value)
 
-  // process
-  if (sliderValue == randomNumber) {
-    document.getElementById("guess-result").innerHTML =
-      "Answer is " + randomNumber + "!" + " Congratulations!";
-    // console.log("Congratulations!")
+  if ((date == "tuesday" || date == "thursday") || (userAge > 12 && userAge < 21)) {
+    document.getElementById("guess-result").innerHTML = 
+      "You are eligible for a discount!"
   }
-  //  block of code to be executed if condition1 is true
-  if (sliderValue != randomNumber) {
-    document.getElementById("guess-result").innerHTML =
-      "Answer is " + randomNumber + "!" + " Try again!";
-    // console.log("Try again!")
+  else {
+    document.getElementById("guess-result").innerHTML = 
+      "You are not eligible for a discount."
   }
 }
