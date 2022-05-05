@@ -19,15 +19,15 @@ if (navigator.serviceWorker) {
  * This function compares slider with random number.
  */
 function guessClicked() {
-  var date = document.getElementById("date")
-  var userAge = parseInt(document.getElementById("user-age").value)
+  var date = document.getElementById("date").value;
+  var userAge = parseInt(document.getElementById("user-age").value);
 
   if ((date == "tuesday" || date == "thursday") || (userAge > 12 && userAge < 21)) {
     document.getElementById("guess-result").innerHTML = 
-      "You are eligible for a discount!"
+      "You are eligible for a discount!";
   }
   else {
     document.getElementById("guess-result").innerHTML = 
-      "You are not eligible for a discount."
+      "You are not eligible for a discount.";
   }
 }
